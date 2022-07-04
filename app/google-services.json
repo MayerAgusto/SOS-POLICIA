@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "731473061926",
+    "firebase_url": "https://android-backend-8f0f1-default-rtdb.firebaseio.com",
+    "project_id": "android-backend-8f0f1",
+    "storage_bucket": "android-backend-8f0f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731473061926:android:1f02329e59ffd6e7ab5ee7",
+        "android_client_info": {
+          "package_name": "com.example.afinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvWkbEr2eOA8ejNwyzNcr7LkvoUB9tXwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731473061926:android:ac86995d3e91a395ab5ee7",
+        "android_client_info": {
+          "package_name": "danp.lab06.jetpackpaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvWkbEr2eOA8ejNwyzNcr7LkvoUB9tXwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731473061926:android:0ce67f2d35412a69ab5ee7",
+        "android_client_info": {
+          "package_name": "danp.proyecto01.sosmujer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvWkbEr2eOA8ejNwyzNcr7LkvoUB9tXwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731473061926:android:6049909deef125daab5ee7",
+        "android_client_info": {
+          "package_name": "dev.leonardom.loginjetpackcompose"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvWkbEr2eOA8ejNwyzNcr7LkvoUB9tXwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731473061926-2447mpm10nh14bejktsf031b915r2956.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
