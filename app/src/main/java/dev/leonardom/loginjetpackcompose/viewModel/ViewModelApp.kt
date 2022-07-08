@@ -9,6 +9,7 @@ import dev.leonardom.loginjetpackcompose.RoomDatabase.NotificationDataBase
 import dev.leonardom.loginjetpackcompose.RoomDatabase.Repository.NotificationRepository
 
 class MainViewModel(application: Application): ViewModel() {
+
     var allNotifications: LiveData<List<Notification>>? = null
     private var repository: NotificationRepository? = null
     var searchResult: MutableLiveData<Notification>? = null
@@ -19,7 +20,6 @@ class MainViewModel(application: Application): ViewModel() {
         repository = NotificationRepository(notificationDao)
         allNotifications = repository!!.allNotifications
         searchResult = repository!!.searchResult
-
     }
 
     fun insertNotification(notification: Notification){

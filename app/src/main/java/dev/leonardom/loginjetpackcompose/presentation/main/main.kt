@@ -137,7 +137,7 @@ fun Main(navController: NavHostController, dataStore: DataStore) {
                     ImageCard(painter = policePinter,
                         contentDescription =policeImageDescription ,
                         title = policeTitle,
-                        onClick = {})
+                        onClick = {navController.navigate("ListComisarias")})
                 }
 
             }

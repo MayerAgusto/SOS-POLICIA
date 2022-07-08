@@ -22,11 +22,13 @@ import com.google.firebase.ktx.Firebase
 import dev.leonardom.loginjetpackcompose.DataStore.DataStore
 import dev.leonardom.loginjetpackcompose.RoomDatabase.Model.Notification
 import dev.leonardom.loginjetpackcompose.presentation.CreateFormNotification.FormNotification
+import dev.leonardom.loginjetpackcompose.presentation.ListComisarias.ListComisarias
 import dev.leonardom.loginjetpackcompose.presentation.MyIncidents.MyIncidents
 import dev.leonardom.loginjetpackcompose.presentation.login.LoginScreen
 import dev.leonardom.loginjetpackcompose.presentation.main.Main
 import dev.leonardom.loginjetpackcompose.presentation.registration.RegistrationScreen
 import dev.leonardom.loginjetpackcompose.ui.theme.LoginJetpackComposeTheme
+import dev.leonardom.loginjetpackcompose.viewModel.ComisariasViewModel
 import dev.leonardom.loginjetpackcompose.viewModel.MainViewModel
 
 class MainActivity : ComponentActivity() {
@@ -59,12 +61,10 @@ class MainActivity : ComponentActivity() {
         var startApp = ""
         val userEmail = dataStore.getEmail.collectAsState(initial = "")
         val userPassword = dataStore.getPassword.collectAsState(initial = "")
-
         //TODO(LISTA QUE CONTIENE TODAS LAS NOTIFICACIONES EN UNA LISTA)
         val allNotifications by viewModel.allNotifications!!.observeAsState(listOf())
         //TODO(VARIABLE DONDE ALMACENA LA NOTIFICACION BUSCADA MEDIANTE ID)
         val searchResult by viewModel.searchResult!!.observeAsState(Notification())
-
 
         if(userEmail.value!! == "" && userPassword.value!! == ""){
             startApp = "login"
@@ -88,8 +88,11 @@ class MainActivity : ComponentActivity() {
             composable("myIncidents"){
                 MyIncidents(navController, allNotifications, viewModel, searchResult)
             }
-        }
+            composable("ListComisarias"){
+                ListComisarias(navController,ComisariasViewModel())
+            }
 
+        }
     }
 }
 

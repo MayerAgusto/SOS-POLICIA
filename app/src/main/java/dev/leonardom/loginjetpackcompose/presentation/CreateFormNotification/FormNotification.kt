@@ -46,7 +46,6 @@ fun FormNotification(
     val focusManager = LocalFocusManager.current
     val scope = rememberCoroutineScope()
 
-
     val userDepartment = dataStore.getDepartment.collectAsState(initial = "")
     val userProvince = dataStore.getProvince.collectAsState(initial = "")
     val userCity  =dataStore.getCity.collectAsState(initial = "")

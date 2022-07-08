@@ -75,7 +75,6 @@ fun MyIncidents(
                 Text(text = "${notification.date}")
                 Text(text = "${notification.nameUser}")
             }
-
             /*
             item{
                 //TODO( CODIGO PARA OBTENER UNA NOTIFICACION SEGUN ID)
@@ -92,7 +91,7 @@ fun MyIncidents(
                 }
 
             }
-             */
+            */
         }
     }
 }

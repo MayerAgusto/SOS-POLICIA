@@ -191,7 +191,7 @@ fun RegistrationScreen(
                                         dataStore.saveCity(cityValue.value)
                                         dataStore.saveEmail(emailValue.value)
                                         dataStore.savePassword(passwordValue.value)
-                                        navController.navigate("login")
+                                        navController.navigate("main")
                                     }
                                 }
                                 .addOnFailureListener { e ->

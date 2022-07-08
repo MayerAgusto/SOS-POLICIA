@@ -39,6 +39,7 @@ import dev.leonardom.loginjetpackcompose.DataStore.DataStore
 import dev.leonardom.loginjetpackcompose.R
 import dev.leonardom.loginjetpackcompose.presentation.components.RoundedButton
 import dev.leonardom.loginjetpackcompose.presentation.components.TransparentTextField
+import kotlinx.coroutines.launch
 
 @Composable
 fun LoginScreen(navController: NavHostController, dataStore: DataStore, db: FirebaseFirestore) {
@@ -50,6 +51,7 @@ fun LoginScreen(navController: NavHostController, dataStore: DataStore, db: Fire
 
     val userEmail = dataStore.getEmail.collectAsState(initial = "")
     val userPassword = dataStore.getPassword.collectAsState(initial = "")
+    val scope = rememberCoroutineScope()
 
     if(userEmail.value  !== ""){
         emailValue.value = userEmail.value.toString()
@@ -175,7 +177,6 @@ fun LoginScreen(navController: NavHostController, dataStore: DataStore, db: Fire
 
                             RoundedButton(
                                 text = "Iniciar sesion",
-                                displayProgressBar = false,
                                 onClick = {
                                     db.collection("users")
                                         .whereEqualTo("email", emailValue.value)
@@ -184,8 +185,16 @@ fun LoginScreen(navController: NavHostController, dataStore: DataStore, db: Fire
                                         .addOnSuccessListener { documents ->
                                             for (document in documents) {
                                                 Log.d("ID_DOCUMENTS", "${document.id} => ${document.data}")
-                                                if(document.id != ""){
-                                                    navController.navigate("main")
+                                                if (document.id != "") {
+                                                    scope.launch{
+                                                        dataStore.saveName(document.data["nameValue"].toString())
+                                                        dataStore.saveDepartment(document.data["departament"].toString())
+                                                        dataStore.saveProvince(document.data["province"].toString())
+                                                        dataStore.saveCity(document.data["city"].toString())
+                                                        dataStore.saveEmail(document.data["email"].toString())
+                                                        dataStore.savePassword(document.data["password"].toString())
+                                                        navController.navigate("main")
+                                                    }
                                                 }
                                             }
                                         }
@@ -193,7 +202,6 @@ fun LoginScreen(navController: NavHostController, dataStore: DataStore, db: Fire
                                             Log.w("ERROR", "Error getting documents: ", exception)
                                             Toast.makeText(context,"Datos no validos",Toast.LENGTH_SHORT).show()
                                         }
-
                                 }
                             )
 
@@ -201,7 +209,6 @@ fun LoginScreen(navController: NavHostController, dataStore: DataStore, db: Fire
 
                                 text = buildAnnotatedString {
                                     append("No tienes una cuenta, ")
-
                                     withStyle(
                                         style = SpanStyle(
                                             color = MaterialTheme.colors.primary,
