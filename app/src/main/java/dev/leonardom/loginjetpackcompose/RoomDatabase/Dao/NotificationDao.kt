@@ -13,6 +13,9 @@ interface NotificationDao {
     @Query("SELECT * FROM Notification WHERE id = :id")
     fun getNotificationById(id: Int):Notification?
 
+    @Update
+    fun update(notification: Notification)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertNotification(notification: Notification)
 

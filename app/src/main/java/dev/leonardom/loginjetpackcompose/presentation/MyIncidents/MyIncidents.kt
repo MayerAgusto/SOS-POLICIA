@@ -1,6 +1,6 @@
 package dev.leonardom.loginjetpackcompose.presentation.MyIncidents
 
-import android.util.Log
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -12,8 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import androidx.navigation.Navigation
+import com.google.firebase.firestore.FirebaseFirestore
 import dev.leonardom.loginjetpackcompose.RoomDatabase.Model.Notification
+import dev.leonardom.loginjetpackcompose.presentation.components.CardNotificacion
 import dev.leonardom.loginjetpackcompose.viewModel.MainViewModel
 
 @Composable
@@ -21,7 +25,8 @@ fun MyIncidents(
     navController: NavHostController,
     allNotifications: List<Notification>,
     viewModel: MainViewModel,
-    searchResult: Notification
+    searchResult: Notification,
+    db: FirebaseFirestore,
 ) {
     Box(
         modifier = Modifier
@@ -68,12 +73,15 @@ fun MyIncidents(
             val list = allNotifications
             items(list) {
                     notification ->
-                Text(text = "${notification.id}")
+                CardNotificacion(notification,viewModel,db)
+                /*Text(text = "${notification.id}")
                 Text(text = "${notification.title}")
                 Text(text = "${notification.idFirebase}")
                 Text(text = "${notification.department}")
                 Text(text = "${notification.date}")
                 Text(text = "${notification.nameUser}")
+                 */
+
             }
             /*
             item{

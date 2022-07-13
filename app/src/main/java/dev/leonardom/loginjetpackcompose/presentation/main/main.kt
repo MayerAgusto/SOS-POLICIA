@@ -126,7 +126,9 @@ fun Main(navController: NavHostController, dataStore: DataStore) {
                     ImageCard(painter = locationPinter,
                         contentDescription =locationImageDescription ,
                         title = locationTitle,
-                        onClick = {})
+                        onClick = {
+                            navController.navigate("IncidentsByZone")
+                        })
                 }
                 Box(modifier = Modifier.width(140.dp)
                 ) {

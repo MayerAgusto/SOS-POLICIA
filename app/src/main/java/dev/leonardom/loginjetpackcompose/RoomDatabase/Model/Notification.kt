@@ -4,6 +4,8 @@ import android.service.quicksettings.Tile
 import androidx.annotation.NonNull
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.ktx.toObject
 
 @Entity
  class Notification{
@@ -62,4 +64,12 @@ import androidx.room.PrimaryKey
     fun savefirestoreID(idFirebase: String){
         this.idFirebase = idFirebase
     }
+    companion object {
+        fun toObject(doc: DocumentSnapshot): Notification? {
+            val item = doc.toObject<Notification>()
+            item?.idFirebase = doc.id
+            return item
+        }
+    }
  }
+
