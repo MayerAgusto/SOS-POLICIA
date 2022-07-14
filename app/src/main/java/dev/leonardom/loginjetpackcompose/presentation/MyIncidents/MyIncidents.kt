@@ -74,32 +74,10 @@ fun MyIncidents(
             items(list) {
                     notification ->
                 CardNotificacion(notification,viewModel,db)
-                /*Text(text = "${notification.id}")
-                Text(text = "${notification.title}")
-                Text(text = "${notification.idFirebase}")
-                Text(text = "${notification.department}")
-                Text(text = "${notification.date}")
-                Text(text = "${notification.nameUser}")
-                 */
+
 
             }
-            /*
-            item{
-                //TODO( CODIGO PARA OBTENER UNA NOTIFICACION SEGUN ID)
-                //los datos de la motificacion se guardan en la variable
-                // searchResult
-                Spacer(modifier = Modifier.height(20.dp))
-                Column(){
-                    viewModel.findNotificationById(1)
-                    Text(text = "usuario con codigo 1")
-                    Text(text = searchResult.title)
-                    Text(text = searchResult.description)
-                    Text(text = searchResult.idFirebase)
-                    Text(text = searchResult.nameUser)
-                }
 
-            }
-            */
         }
     }
 }

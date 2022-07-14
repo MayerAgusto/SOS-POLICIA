@@ -7,5 +7,5 @@ dependencyResolutionManagement {
         maven {url 'https://jitpack.io'}
     }
 }
-rootProject.name = "Login Jetpack Compose"
+rootProject.name = "Alerta Vecinal App"
 include ':app'

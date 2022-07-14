@@ -77,7 +77,7 @@ fun IncidentsByZone(viewModel: IncidentsViewModel,
                             }
 
                             Text(
-                                text = "Mis incidentes",
+                                text = "Mis incidentes de mi zona",
                                 style = MaterialTheme.typography.h5.copy(
                                     color = MaterialTheme.colors.primary
                                 )

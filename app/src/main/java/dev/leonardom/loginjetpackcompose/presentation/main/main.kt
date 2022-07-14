@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import dev.leonardom.loginjetpackcompose.DataStore.DataStore
 import dev.leonardom.loginjetpackcompose.presentation.components.RoundedButton
+import kotlin.system.exitProcess
 
 @Composable
 fun Main(navController: NavHostController, dataStore: DataStore) {
@@ -153,7 +154,8 @@ fun Main(navController: NavHostController, dataStore: DataStore) {
                     text = "Salir",
                     displayProgressBar = false,
                     onClick = {
-                        navController.navigate("main")
+
+                        exitProcess(0)
                     }
                 )
             }
